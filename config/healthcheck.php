@@ -12,4 +12,6 @@ return [
 
     'scheduler' => false,
 
+    'logging' => true,
+
 ];

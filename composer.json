@@ -1,0 +1,25 @@
+{
+  "name": "alfan06/laravel-healthcheck",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Alfan06\\LaravelHealthcheck\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Alfan06\\LaravelHealthcheck\\HealthcheckServiceProvider"
+      ]
+    }
+  },
+  "authors": [
+    {
+      "name": "Chris Bautista",
+      "email": "chris.bautista@alfan06.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {}
+}

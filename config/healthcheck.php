@@ -14,4 +14,10 @@ return [
 
     'logging' => true,
 
+    'jobs' => [
+
+        'logging' => true,
+
+    ],
+
 ];

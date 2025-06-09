@@ -2,7 +2,7 @@
 
 This package provides a simple healthcheck endpoint for your Laravel application.
 
-![Import Action](https://raw.githubusercontent.com/alfan06/laravel-healthcheck/main/docs/healthcheck.png)
+![Import Action](https://raw.githubusercontent.com/alfan06/laravel-healthcheck/master/docs/healthcheck.png)
 
 ## Installation
 

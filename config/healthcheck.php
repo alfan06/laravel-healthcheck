@@ -10,4 +10,6 @@ return [
 
     'horizon' => true,
 
+    'scheduler' => false,
+
 ];

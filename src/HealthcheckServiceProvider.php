@@ -2,6 +2,8 @@
 
 namespace Alfan06\LaravelHealthcheck;
 
+use Alfan06\LaravelHealthcheck\Console\Commands\HorizonStatusLog;
+use Alfan06\LaravelHealthcheck\Console\Commands\SchedulerLog;
 use Illuminate\Support\ServiceProvider;
 
 class HealthcheckServiceProvider extends ServiceProvider
@@ -14,5 +16,11 @@ class HealthcheckServiceProvider extends ServiceProvider
         ], 'healthcheck-config');
 
         $this->loadRoutesFrom(__DIR__ . '/../routes/healthcheck.php');
+
+        // Register the command if we are using the application via the console
+        $this->commands([
+            SchedulerLog::class,
+            HorizonStatusLog::class,
+        ]);
     }
 }

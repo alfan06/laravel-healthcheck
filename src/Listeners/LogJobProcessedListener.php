@@ -1,6 +1,6 @@
 <?php
 
-namespace Alfan06\LaravelHealthcheck\Listeners;
+namespace Coreproc\LaravelHealthcheck\Listeners;
 
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Support\Facades\Log;
@@ -14,7 +14,21 @@ class LogJobProcessedListener
     {
         $payload = $event->job->payload();
 
-        $startTime = $payload['pushedAt'];
+        $startTime = $payload['pushedAt'] ?? null;
+
+        if(empty($startTime)) {
+            Log::info('Job Processed', [
+                'event' => 'job.processed',
+                'job' => $payload['displayName'] ?? 'Unknown Job',
+                'connection' => $event->connectionName,
+                'queue' => $event->job->getQueue(),
+                'payload' => $payload,
+                'processing_time' => null,
+            ]);
+
+            return;
+        }
+
         $endTime = microtime(true);
 
         $processingTime = ($endTime - $startTime) / 1000;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Alfan06\LaravelHealthcheck;
+namespace Coreproc\LaravelHealthcheck;
 
 use Carbon\Carbon;
 use Exception;

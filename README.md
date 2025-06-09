@@ -2,20 +2,20 @@
 
 This package provides a simple healthcheck endpoint for your Laravel application.
 
-![Import Action](https://raw.githubusercontent.com/coreproc/laravel-healthcheck/master/docs/healthcheck.png)
+![Import Action](https://raw.githubusercontent.com/alfan06/laravel-healthcheck/master/docs/healthcheck.png)
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require coreproc/laravel-healthcheck
+composer require alfan06/laravel-healthcheck
 ```
 
 Publish the config file:
 
 ```bash
-php artisan vendor:publish --provider="Coreproc\LaravelHealthcheck\HealthcheckServiceProvider"
+php artisan vendor:publish --provider="Alfan06\LaravelHealthcheck\HealthcheckServiceProvider"
 ```
 
 ## Usage

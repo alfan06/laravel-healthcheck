@@ -1,10 +1,10 @@
 <?php
 
-namespace Coreproc\LaravelHealthcheck;
+namespace Alfan06\LaravelHealthcheck;
 
-use Coreproc\LaravelHealthcheck\Listeners\LogJobFailedListener;
-use Coreproc\LaravelHealthcheck\Listeners\LogJobProcessedListener;
-use Coreproc\LaravelHealthcheck\Listeners\LogJobProcessingListener;
+use Alfan06\LaravelHealthcheck\Listeners\LogJobFailedListener;
+use Alfan06\LaravelHealthcheck\Listeners\LogJobProcessedListener;
+use Alfan06\LaravelHealthcheck\Listeners\LogJobProcessingListener;
 use Illuminate\Queue\Events\JobFailed;
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Queue\Events\JobProcessing;

@@ -1,5 +1,5 @@
 <?php
 
-use Coreproc\LaravelHealthcheck\HealthCheckController;
+use Alfan06\LaravelHealthcheck\HealthCheckController;
 
 Route::get(config('healthcheck.path', 'healthcheck'), HealthCheckController::class);

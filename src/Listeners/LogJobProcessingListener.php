@@ -1,6 +1,6 @@
 <?php
 
-namespace Coreproc\LaravelHealthcheck\Listeners;
+namespace Alfan06\LaravelHealthcheck\Listeners;
 
 use Illuminate\Queue\Events\JobProcessing;
 use Illuminate\Support\Facades\Log;

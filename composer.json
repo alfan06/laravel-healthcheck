@@ -1,23 +1,23 @@
 {
-  "name": "coreproc/laravel-healthcheck",
+  "name": "alfan06/laravel-healthcheck",
   "type": "library",
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Coreproc\\LaravelHealthcheck\\": "src/"
+      "Alfan06\\LaravelHealthcheck\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Coreproc\\LaravelHealthcheck\\HealthcheckServiceProvider"
+        "Alfan06\\LaravelHealthcheck\\HealthcheckServiceProvider"
       ]
     }
   },
   "authors": [
     {
       "name": "Chris Bautista",
-      "email": "chris.bautista@coreproc.com"
+      "email": "chris.bautista@alfan06.com"
     }
   ],
   "minimum-stability": "dev",

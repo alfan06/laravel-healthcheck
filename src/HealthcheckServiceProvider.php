@@ -16,11 +16,5 @@ class HealthcheckServiceProvider extends ServiceProvider
         ], 'healthcheck-config');
 
         $this->loadRoutesFrom(__DIR__ . '/../routes/healthcheck.php');
-
-        // Register the command if we are using the application via the console
-        $this->commands([
-            SchedulerLog::class,
-            HorizonStatusLog::class,
-        ]);
     }
 }

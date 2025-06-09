@@ -27,10 +27,10 @@ class HealthCheckController extends Controller
             try {
                 DB::connection()->getPdo();
                 $dbStatus = 'OK';
-                $logContext['is_database_connected'] = true;
+                $logContext['is_database_connected'] = 'true';
             } catch (Exception $e) {
                 $status = 500;
-                $logContext['is_database_connected'] = false;
+                $logContext['is_database_connected'] = 'false';
                 $dbStatus = 'Unable to connect to the database: ' . $e->getMessage();
             }
             $response['db_status'] = $dbStatus;
@@ -41,11 +41,11 @@ class HealthCheckController extends Controller
             try {
                 Redis::ping();
                 $redisStatus = 'OK';
-                $logContext['is_redis_connected'] = true;
+                $logContext['is_redis_connected'] = 'true';
             } catch (Exception $e) {
                 $status = 500;
                 $redisStatus = 'Unable to connect to Redis: ' . $e->getMessage();
-                $logContext['is_redis_connected'] = false;
+                $logContext['is_redis_connected'] = 'false';
             }
             $response['redis_status'] = $redisStatus;
         }
@@ -58,12 +58,12 @@ class HealthCheckController extends Controller
                 $horizonStatus = 'Horizon is currently ' . $horizonCurrentStatus;
                 if ($horizonCurrentStatus === 'running') {
                     $horizonStatus = 'OK';
-                    $logContext['is_horizon_running'] = true;
+                    $logContext['is_horizon_running'] = 'true';
                 }
             }
             if ($horizonStatus !== 'OK') {
                 // Add logs for cloudwatch to monitor
-                $logContext['is_horizon_running'] = false;
+                $logContext['is_horizon_running'] = 'false';
             }
             $response['horizon_status'] = $horizonStatus;
         }
@@ -71,13 +71,13 @@ class HealthCheckController extends Controller
         if (config('healthcheck.scheduler', false)) {
             $response['scheduler_status'] = 'OK';
             $response['scheduler_last_run'] = $this->getLastRun()?->format('Y-m-d H:i:s');
-            $logContext['is_scheduler_running'] = true;
+            $logContext['is_scheduler_running'] = 'true';
             $logContext['scheduler_last_run'] = $response['scheduler_last_run'];
 
             // Check if the last run was more than or equal to 2 minutes ago
             if (empty($this->getLastRun()) || $this->getLastRun()?->diffInMinutes(Carbon::now()) >= 2) {
                 $response['scheduler_status'] = 'Scheduler is not running';
-                $logContext['is_scheduler_running'] = false;
+                $logContext['is_scheduler_running'] = 'false';
             }
         }
 
